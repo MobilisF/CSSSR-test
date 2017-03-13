@@ -1,0 +1,30 @@
+// Project variables
+@import '_variables'
+
+// Project mixins
+@import 'components/mixins'
+
+
+// Svg icons
+@import '../../../tmp/icons-template.styl'
+
+
+// Png sprites
+@import '../../../tmp/sprite.styl' if file-exists('../../../tmp/sprite.styl')
+
+
+// Components
+@import 'components/index'
+
+
+// Plugins
+// @import 'plugins/plugin-example.css'
+// @import 'plugins/plugin-example.styl'
+
+
+// Modules
+@import '../../modules/**/!(_)*.styl'
+
+
+// Common
+@import '_common'
