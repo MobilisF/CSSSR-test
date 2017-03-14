@@ -1,19 +1,10 @@
-include ../logo/logo
-include ../search-widget/search-widget
-include ../main-menu/main-menu
-include ../github-button/github-button
-include ../header-presentation/header-presentation
-include ../mobile-menu-trigger/mobile-menu-trigger
 
-mixin header(data)
-	header.header&attributes(attributes)
-		.header__top
-			.header__inner
-				.header__logo
-					img(src="assets/images/content/delo.png", alt="logo")
-					img(src="assets/images/content/secret.png", alt="secret")
+header.header
+	.header__top
+		div
+			img#logo(src="assets/images/content/logo.png", alt="logo")
+			
+		img#secret(src="assets/images/content/secret.png", alt="secret")
 
-		.header__bottom
-			.header__inner
-				+header-presentation(headerPresentation.default)
-					img(src="assets/images/content/delo.png", alt="delo")
+	.header__bottom
+		img#delo(src="assets/images/content/delo.png", alt="delo")

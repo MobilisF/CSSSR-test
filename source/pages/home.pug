@@ -3,90 +3,93 @@ include ../modules/_page-list/_page-list
 
 doctype html
 html(class="no-js" lang=config.lang)
-	head
-		+head(head.index)	
-	body.page
-		//include ../modules/header/header.pug
-		//+header()
+    head
+        +head(head.index)
 
-		img(src=gulp-front/source/static/assets/images/content/back1.png + "/back1", alt="back1")
+    body.page
+        section.background
+            include ../modules/header/header.pug
+            //+header()
 
-		section.form
-			mixin field(title, value, input_name)
-				div.form__field
-					label(for=input_name)= title
-					input(type="text", name=input_name, value=value, required, readonly)
-			+field('Полное ФИО', 'Калачев Никита Алексеевич', 'name')
-			+field('Год рождения', '1990 г.', 'birth_year')
-			+field('Место жительства', 'г. Ульяновск', 'location')
-			+field('Скайп', 'miles_fon_darkta', 'skype')
-			+field('Почта', 'nikitakalachev18@gmail.com', 'mail')
+            //img(src=gulp - front / source / static/assets/images/content/back1.png + "/back1", alt="back1")
 
-		section.checkbox
-			section.about
-			h1 Расскажите о себе чекбоксами
-			section.text
-			p Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
+            section.form
+                mixin field(title, value, input_name)
+                    div.form__field
+                        label(for=input_name)= title
+                        input(type="text", name=input_name, value=value, required, readonly)
+                +field('Полное ФИО', 'Калачев Никита Алексеевич', 'name')
+                +field('Год рождения', '1990 г.', 'birth_year')
+                +field('Место жительства', 'г. Ульяновск', 'location')
+                +field('Скайп', 'miles_fon_darkta', 'skype')
+                +field('Почта', 'nikitakalachev18@gmail.com', 'mail')
 
-			mixin checkbox(title, name, is_checked)
-				div.form__checkbox
-					label(for=name)!= title
-					input(type="checkbox", name=name, checked=is_checked, disabled)
-			.flex-row
-				.flex-column
-					+checkbox('БЭМ/OOCSS', 'oocss', true)
-					+checkbox('Pug (Jade)', 'jade', true)
-					+checkbox('Stylus/LESS/SASS', 'stylus', true)
-					+checkbox('Работаю с SVG', 'svg', true)
-					+checkbox('Верстаю семантично', 'semantic', true)
-					+checkbox('Accessibility (A11Y)', 'accessibility', false)
-					+checkbox('ES2015/ES2016', 'es2015', false)
+            section.checkbox
+                section.about
+                h1 Расскажите о себе чекбоксами
+                section.text
+                p Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
 
-				.flex-column
-					+checkbox('Gulp/GRUNT', 'gulp', false)
-					+checkbox('Webpack', 'webpack', false)
-					+checkbox('Дружу с WebGL', 'webgl', false)
-					+checkbox('jOuery', 'jquery', false)
-					+checkbox('Знаю/изучаю Angular', 'angular', false)
-					+checkbox('Знаю/изучаю React', 'react', false)
-					+checkbox('Знаю/изучаю Node.js', 'semantic', true)
+                mixin checkbox(title, name, is_checked)
+                    div.form__checkbox
+                        label(for=name)!= title
+                        input(type="checkbox", name=name, checked=is_checked)
+                .flex-row
+                    .flex-column
+                        +checkbox('БЭМ/OOCSS', 'oocss', true)
+                        +checkbox('Pug (Jade)', 'jade', true)
+                        +checkbox('Stylus/LESS/SASS', 'stylus', true)
+                        +checkbox('Работаю с SVG', 'svg', true)
+                        +checkbox('Верстаю семантично', 'semantic', true)
+                        +checkbox('Accessibility (A11Y)', 'accessibility', false)
+                        +checkbox('ES2015/ES2016', 'es2015', false)
 
-				.flex-column
-					+checkbox('Использую Git', 'git', true)
-					+checkbox('С глазомером все ок', 'Карина', true)
-					+checkbox('Читаю блог <a href="https://blog.csssr.ru">blog.csssr.ru</a>', 'csssr', true)
-					+checkbox('Я ленивый(-ая)', 'lazy', false)
-					+checkbox('У меня хороший английский', 'english', true)
+                    .flex-column
+                        +checkbox('Gulp/GRUNT', 'gulp', false)
+                        +checkbox('Webpack', 'webpack', false)
+                        +checkbox('Дружу с WebGL', 'webgl', false)
+                        +checkbox('jOuery', 'jquery', false)
+                        +checkbox('Знаю/изучаю Angular', 'angular', false)
+                        +checkbox('Знаю/изучаю React', 'react', false)
+                        +checkbox('Знаю/изучаю Node.js', 'semantic', true)
 
-		section.javascript
-			h1 Уровень владения JavaScript
-			input(type="range", id="weight", min="0", value="1", max="3", step="1")
-			h2(id="one") Не владею
-			h2(id="two") Использую готовые решения
-			h2(id="three") Использую готовые решения и умею их переделывать 
-			h2(id="four") Пишу сложный JS с нуля
+                    .flex-column
+                        +checkbox('Использую Git', 'git', true)
+                        +checkbox('С глазомером все ок', 'Карина', true)
+                        +checkbox('Читаю блог <a href="https://blog.csssr.ru">blog.csssr.ru</a>', 'csssr', true)
+                        +checkbox('Я ленивый(-ая)', 'lazy', false)
+                        +checkbox('У меня хороший английский', 'english', true)
 
-		section.myself
-			h1 Расскажите о себе словами
-			p Напишите пару предложений, чем вас привлекла наша вакансия и чего вы ожидаете от работы в CSSSR. Кстати, будет здорово, если при нехватке места для текста строки будут добавляться автоматически.
-			textarea(class="area", rows=3).form
-				|Нуууу
-				|эээ
-				|..
+            section.javascript
+                h1 Уровень владения JavaScript
+                input(type="range", id="weight", min="0", value="1", max="3", step="1")
+                .flex-row
+                    h2(id="one") Не владею
+                    h2(id="two") Использую готовые решения
+                    h2(id="three") Использую готовые решения <br> и умею их переделывать
+                    h2(id="four") Пишу сложный JS с нуля
 
-		section.future
-			h1 Какие у вас планы на будущее?
-			p Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
-			mixin radio(title, name, is_checked)
-				div.form__radio
-					input(type="radio", name=name, checked=is_checked)
-					label(for=name)=title
-			.flex-row
-				+radio('Верстать', 'pages')
-				+radio('Прокачиваться в JS', 'js', true)
-				+radio('Менеджерство', 'manager')
-				+radio('Другое', 'other')
+            section.myself
+                h1 Расскажите о себе словами
+                p Напишите пару предложений, чем вас привлекла наша вакансия и чего вы ожидаете от работы в CSSSR. Кстати, будет здорово, если при нехватке места для текста строки будут добавляться автоматически.
+                textarea(class="area", rows=3).form
+                    | Нуууу
+                    | эээ
+                    | ..
 
-		section.date
-			h1 Дата заполнения
-			input(type="date" name="calendar" value="2017-03-14" max="2100-01-01" min="2017-01-01")
+            section.future
+                h1 Какие у вас планы на будущее?
+                p Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
+                mixin radio(title, name, is_checked)
+                    div.form__radio
+                        input(type="radio", name=name, checked=is_checked)
+                        label(for=name)=title
+                .flex-row
+                    +radio('Верстать', 'pages')
+                    +radio('Прокачиваться в JS', 'js', true)
+                    +radio('Менеджерство', 'manager')
+                    +radio('Другое', 'other')
+
+            section.date
+                h1 Дата заполнения
+                input(type="date" name="calendar" value="2017-03-14" max="2100-01-01" min="2017-01-01")
