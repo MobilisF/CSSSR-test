@@ -10,17 +10,10 @@ mixin header(data)
 		.header__top
 			.header__inner
 				.header__logo
-					+logo()
-
-				.header__menu
-					+main-menu(mainMenu.default)
-
-				.header__github
-					+github-button()
-
-				.header__mobile-menu-trigger
-					+mobile-menu-trigger()
+					img(src="assets/images/content/delo.png", alt="logo")
+					img(src="assets/images/content/secret.png", alt="secret")
 
 		.header__bottom
 			.header__inner
 				+header-presentation(headerPresentation.default)
+					img(src="assets/images/content/delo.png", alt="delo")
